@@ -5,12 +5,12 @@
     <% if back_path %>
       <div class="left">
         <a href="<%= url_for_path(back_path) %>" class="back link" data-forceUrl="true">
-          <i class="icon icon-back"></i>
+          <i class="fa fa-angle-left fa-2x"></i>
           <span><%= File.basename(back_path) %></span>
         </a>
       </div>
     <% end %>
-    <div class="center sliding"><%= @name == "/" ? "Beamer Remote" : @name %></div>
+    <div class="center sliding"><%= @name == '/' ? '<span class="beamer-title">Beamr</span>' : @name %></div>
   </div>
 </div>
 <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
@@ -19,13 +19,15 @@
   <div data-page="browse" class="page">
     <!-- Scrollable page content-->
     <div class="page-content">
+      <div class="content-block-title">Choose a video to beam</div>
       <div class="list-block">
         <ul>
           <% @entries.each do |entry| %>
             <li>
               <a href="<%= url_for_path(File.join(@path, entry)) %>" class="item-link">
                 <div class="item-content">
-                  <div class="item-inner">
+                  <div class="item-inner beamer-file-entry">
+                    <%= File.directory?(File.join(@path, entry)) ? '<i class="fa fa-folder-open-o"></i>' : '<i class="fa fa-file-o"></i>' %>
                     <div class="item-title"><%= entry %></div>
                   </div>
                 </div>

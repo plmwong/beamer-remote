@@ -5,7 +5,7 @@
     <% if back_path %>
       <div class="left">
         <a href="<%= url_for_path(back_path) %>" class="back link" data-forceUrl="true">
-          <i class="icon icon-back"></i>
+          <i class="fa fa-angle-left fa-2x"></i>
           <span><%= File.basename(back_path) %></span>
         </a>
       </div>
@@ -18,9 +18,12 @@
   <div data-page="play" class="page">
     <!-- Scrollable page content-->
     <div class="page-content">
+      <div class="content-block-title">Now Playing</div>
       <div class="content-block">
-        <div class="content-block-inner">
-          <p>"<%= @name %>" is now playing on your Apple TV.</p>
+        <div class="content-block-inner beamer-now-playing">
+          <p>
+            <i class="fa fa-play-circle-o beamer-now-playing-icon fa-lg"></i><span class="beamer-now-playing-file">'<%= @name %>'</span> is now playing on your Apple TV.
+          </p>
         </div>
       </div>
     </div>
