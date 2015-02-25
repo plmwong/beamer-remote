@@ -28,7 +28,7 @@
                 <div class="item-content">
                   <div class="item-inner beamer-file-entry">
                     <%= File.directory?(File.join(@path, entry)) ? '<i class="fa fa-folder-open-o"></i>' : '<i class="fa fa-file-o"></i>' %>
-                    <div class="item-title"><%= entry %></div>
+                    <div class="item-title"><%= File.directory?(File.join(@path, entry)) ? '/' : '' %><%= entry %></div>
                   </div>
                 </div>
               </a>

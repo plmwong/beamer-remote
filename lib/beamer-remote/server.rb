@@ -9,7 +9,7 @@ module BeamerRemote
     helpers do
       def url_for_path(path)
         action = File.directory?(path) ? "browse" : "play"
-        
+
         File.join("/", action, path)
       end
 

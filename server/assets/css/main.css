@@ -1,13 +1,19 @@
 a {
-  color: #5662A5;
+  color: #5662a5;
 }
 
 .beamer-title {
-  font-weight: bold;
+  font-size: 95%;
+  color: #6d6d72;
+  text-transform: uppercase;
+}
+
+.beamer-title::first-letter {
+    font-size: 114%;
 }
 
 .beamer-file-entry {
-  color: #5662A5;
+  color: #5662a5;
 }
 
 .beamer-now-playing {
