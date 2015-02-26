@@ -28,7 +28,7 @@ module BeamerRemote
       @path = File.join("/", path)
       @name = File.basename(@path)
 
-      @entries = Dir.entries(@path).reject { |entry| entry.start_with?(".") }
+      @entries = Dir.entries(@path).reject { |entry| entry.start_with?(".") or not (BeamerRemote.mediafile?(entry) or File.directory?(File.join(@path, entry))) }
 
       erb :browse, layout: !request.xhr?
     end

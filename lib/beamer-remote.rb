@@ -7,5 +7,9 @@ module BeamerRemote
     def play(path)
       system("open", "-b", BUNDLE_IDENTIFIER, path)
     end
+
+    def mediafile?(path)
+      path.downcase =~ /^.*\.(avi|flv|mkv|mov|mp4|wmv)$/
+    end
   end
 end
