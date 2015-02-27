@@ -27,7 +27,7 @@
               <a href="<%= url_for_path(File.join(@path, entry)) %>" class="item-link">
                 <div class="item-content">
                   <div class="item-inner beamer-file-entry">
-                    <%= File.directory?(File.join(@path, entry)) ? '<i class="fa fa-folder-open-o"></i>' : '<i class="fa fa-file-o"></i>' %>
+                    <%= File.directory?(File.join(@path, entry)) ? '<i class="fa fa-folder-open-o"></i>' : '<i class="fa fa-file-video-o"></i>' %>
                     <div class="item-title"><%= File.directory?(File.join(@path, entry)) ? '/' : '' %><%= entry %></div>
                   </div>
                 </div>
